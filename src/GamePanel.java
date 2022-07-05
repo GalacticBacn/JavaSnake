@@ -64,7 +64,10 @@ public class GamePanel extends JPanel implements ActionListener {
                     g.setColor(Color.green);
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 } else {
+                    // first color line is green, use second for random color
+                    // uncomment the second one for each square = rand color
                     g.setColor(new Color(45, 180, 0));
+                    //g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
@@ -126,24 +129,26 @@ public class GamePanel extends JPanel implements ActionListener {
         }
 
         // checking if head touches left border
-        if(x[0] < 0){
+        if (x[0] < 0) {
             running = false;
         }
 
         // checking if head touches right border
-        if(x[0] > SCREEN_WIDTH){
+        if (x[0] > SCREEN_WIDTH) {
             running = false;
         }
 
         // checking if head touches top border
-        if(y[0] < 0){
+        if (y[0] < 0) {
             running = false;
         }
 
         // checking if head touches bottom border
-        if(y[0] > SCREEN_HEIGHT){
+        if (y[0] > SCREEN_HEIGHT) {
             running = false;
         }
+
+
 
         // stops timer if game is not running
         if(!running){
